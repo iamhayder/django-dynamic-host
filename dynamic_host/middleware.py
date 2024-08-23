@@ -1,12 +1,8 @@
-from django.http import HttpResponse, HttpRequest
 from django.core.exceptions import DisallowedHost
+from django.http import HttpRequest, HttpResponse
 
-from .helpers import (
-    import_func,
-    is_a_registered_site,
-    is_in_host_list
-)
 from .conf import conf
+from .helpers import import_func, is_a_registered_site, is_in_host_list
 
 
 class AllowedHostMiddleWare:

@@ -1,7 +1,7 @@
-from django.http import HttpResponse
-from django.test import TestCase, override_settings, RequestFactory
 from django.contrib.sites.models import Site
 from django.core.exceptions import DisallowedHost
+from django.http import HttpResponse
+from django.test import RequestFactory, TestCase, override_settings
 
 from ..middleware import AllowedHostMiddleWare
 

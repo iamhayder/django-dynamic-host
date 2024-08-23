@@ -7,15 +7,6 @@ class Settings:
     @property
     def DYNAMIC_HOST_DEFAULT_HOSTS(self) -> list:
         allowed_hosts = {*getattr(settings, "DYNAMIC_HOST_DEFAULT_HOSTS", [])}
-        if settings.DEBUG:
-            allowed_hosts = {
-                *allowed_hosts,
-                ".localhost",
-                "127.0.0.1",
-                "0.0.0.0",
-                "[::1]",
-            }
-
         return [*allowed_hosts]
 
     @property
