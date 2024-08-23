@@ -42,7 +42,7 @@ What you can do in this case is simple.
             add some logic to check domain in database 
             or some inmemory database system... this is
             totally up to you
-        ""
+        """
         if cache.exists(host):
             return True
         elif Model.objects.filter(domain=host).exists():
@@ -102,9 +102,5 @@ Settings this value to True makes django dynamic host aware of you adding contri
 
 **DYNAMIC_HOST_RESOLVER_FUNC:**
 This holds the string path to your resolver function. this function should return a boolean value. If value is True then the domain is allowed else it is disallowed.
-
-## **NOTE**
-
-When django ``DEBUG=True`` there is no need to manually add localhost or 127.0.0.1 as they are automatically added and allowed under the hood.
 
 **AllowedHostMiddleWare SHOULD ALWAYS SIT AT THE TOP AS IT'S JOB IS TO FIRST OF ALL VALIDATE IF AN INCOMING REQUEST FROM A HOST SHOULD BE ALLOWED TO GAIN ACCESS TO RESOURCE**
